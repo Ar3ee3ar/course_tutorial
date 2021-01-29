@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style/register.css">
+    <script src="https://kit.fontawesome.com/48f6528c57.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+        .thinking{
+            border: 2px solid yellow;
+        };
+        .approvedd{
+            border: 2px solid green;
+        };
+        .deniedd{
+            border: 2px solid red;
+        };
+    </style>
+    <script>
+        var xmlHttp;
+    function checkUsername() {
+    document.getElementById("i-username").className = "thinking";
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = showUsernameStatus;
+    var username = document.getElementById("i-username").value;
+    var url = "check_username.php?username=" + username;
+    xmlHttp.open("GET", url);
+    xmlHttp.send();
+    }
+    function showUsernameStatus() {
+    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+        if (xmlHttp.responseText == "okay") {
+            console.log(xmlHttp.responseText);
+            document.getElementById("i-username").className = "approvedd";
+        } else {
+            document.getElementById("i-username").className = "deniedd";
+            document.getElementById("i-username").focus();
+            document.getElementById("i-username").select();
+        }
+    }
+    }
+    </script>
+</head>
+<header class="login-header" id="header">
+    <div>
+        <a href="index.html" onmouseover="mouse_in2()" onmouseout="mouse_out2()" id="home2" class="link-home">Login
+            <i class="fas fa-sign-in-alt"></i>
+        </a><b>| </b>Member
+    </div>
+    <script>
+        var httpRequest;
+        function checkpassword(){
+            httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = showResult;
+
+            var one = document.getElementById("i-password").value;
+            var two = document.getElementById("i-passwordAgain").value;
+            var url = "check_passw.php?one="+one+"&two="+two;
+
+            httpRequest.open("GET",url);
+            httpRequest.send();
+
+            function showResult(){
+                var result = httpRequest.responseText;
+                if(result=="false"){
+                    document.getElementById("check").innerHTML = "password and password again is not the same";
+                }
+                else if(result=="true"){
+                    document.getElementById("check").innerHTML = "";
+                }
+            }
+        }
+        function seepass() {
+            let x = document.getElementById("i-password");
+            let x2 = document.getElementById("i-passwordAgain");
+            if (x.type === "password"&&x2.type==="password") {
+                x.type = "text";
+                x2.type = "text";
+            } else {
+                x.type = "password";
+                x2.type = "password";
+            }
+        }
+        function mouse_in1() {
+            let y = document.getElementById("home")
+            y.className = "change_color_red";
+        }
+        function mouse_out1() {
+            let y = document.getElementById("home")
+            y.className = "change_color_black";
+        }
+
+        function mouse_in2() {
+            let y = document.getElementById("home2")
+            y.className = "change_color_red";
+        }
+        function mouse_out2() {
+            let y = document.getElementById("home2")
+            y.className = "change_color_black";
+        }
+    </script>
+</header>
+
+<section class="section">
+    <article>
+        <div class="bg-color-white">
+            <div class="block_container">
+                <form action="insertdata.php" method="post">
+                    <div class="login">
+                        <label>สมัครสมาชิก</label><br>
+                    </div>
+                    <div class="snipped">
+                        <label id="l-name">Name</label>
+                        <input type="text" name="m_name" id="i-name" required pattern="(([\u0E01-\u0E4C]+)(\s+)([\u0E01-\u0E4C]+))||(([A-Za-z]+)(\s+)([A-Za-z]+))" title="ใส่ชื่อ-สกุล(this field for Name-Lastname)"><br>
+                    </div>
+                    <div class="snipped">
+                        <label id="l-username">Username</label>
+                        <input type="text" name="m_username" id="i-username"  required minlength="8" title="มีความยาว 8 ตัวอักษรขึ้นไป(min length is 8)" onblur="checkUsername()"><br>
+                    </div>
+                    <div class="snipped">
+                        <label id="l-password">Password&nbsp</label>
+                        <input type="password" name="m_password" id="i-password" required minlength="8"  title="มีความยาว 8 ตัวอักษรขึ้นไป(min length is 8)"><br>
+                    </div>
+                    <div class="snipped">
+                        <label id="l-passwordAgain">Password Again</label>
+                        <input type="password" name="m_passwordAgain" id="i-passwordAgain" required minlength="8"  title="มีความยาว 8 ตัวอักษรขึ้นไป(min length is 8)" onblur="checkpassword()"><br>
+                    </div>
+                    <div class="show-password">
+                        <input type="checkbox" onclick="seepass()" class="checkbox1"><label class="lb-con">Show
+                            Password</label>
+                    </div>
+                    <div class="snipped change_color_red">
+                        <label id="check"></label>
+                    </div>
+                    <div>
+                            <input class="botton1" type="submit" value="สมัครสมาชิก"></input><br>
+                    </div>
+                    <div>
+                        <a href="index.html">
+                            <label class="botton2">เข้าสู่ระบบ</label><br>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+</section>
+
+<footer>
+    <div class="div-footer">
+        <table>
+            <tr>
+                <td class="td-1">
+                    <img src="img/ondemand-logo1.png" width="190px" height="50px">
+                </td>
+                <td>
+                    <label class="td-2">
+                        Contact Us<br>
+                    </label>
+                    <label class="td-2">
+                        089-999-9999
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+</footer>
+</body>
+
+</html>

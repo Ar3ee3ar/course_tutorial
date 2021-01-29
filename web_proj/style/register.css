@@ -1,0 +1,192 @@
+header{
+    position: fixed;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+    background-color: white;
+    box-shadow: 0px 2px 0px #BEBEBE;
+}
+
+section{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+}
+
+footer{
+    margin-left: -10px;
+    padding: 25px 0px 20px 20px;
+    width: 100%;
+    background-color: #878787;
+}
+header,section,footer{
+    max-width: 2000px;
+}
+/*---END OF HEADER, SECTION, FOOTER CSS---*/
+
+form{
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+}
+b{
+    color:  #878787;
+}
+#i-username,#i-password{
+    font-family: 'Prompt', sans-serif;
+    margin-left: 80px;
+    font-size: 15px;
+    color:  #878787;
+}
+#i-name{
+    font-family: 'Prompt', sans-serif;
+    margin-left: 125px;
+    font-size: 15px;
+    color:  #878787;
+}
+
+#i-passwordAgain{
+    font-family: 'Prompt', sans-serif;
+    margin-left: 20px;
+    font-size: 15px;
+    color:  #878787;
+}
+#l-username,#l-password{
+    text-align: right;
+}
+.div-footer{
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+.td-2{
+    margin-left: 50px;
+}
+.block_container{
+    margin-left: auto;
+    margin-right: auto;
+}
+.link-home{
+    color: black;
+}
+.checkbox1{
+    width: 5%;
+}
+.show-password{
+    font-size: 12px;
+}
+.botton1{
+    padding: 5px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: white;
+    width: 50%;
+    border-radius: 20px;
+    background-color:#cf0000;
+}
+.botton2{
+    font-size: 15px;
+    padding: 5px;
+    color: black;
+}
+.snipped{
+    padding: 15px 0px 5px 0px;
+}
+.section {
+    padding: 50px;
+  }
+
+.bg-color-white{
+    display: flex;
+    border-radius: 5px;
+    width: 60%;
+    padding: 20px;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 15px #c9c9c9;
+}
+.login{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #cf0000;
+}
+.change_color_red{
+    color:#cf0000 ;
+}
+.change_color_black{
+    color: black;
+}
+
+@media(max-width : 1070px) {
+    header,section,footer{
+        min-width: 280px;
+    }
+    header{
+        padding: 20px;
+        font-size: 15px;
+    }
+    section{
+        text-align: center;
+    }
+    .bg-color-white{
+        display: inline-block;
+    }
+    .div-footer{
+        min-width: 280px;
+        font-size: 15px;
+    }
+    .login{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+    #i-username,#i-password{
+        margin-left: 35px;
+        font-size: 10px;
+    }
+    #i-name{
+        margin-left: 65px;
+        font-size: 10px;
+    }
+    #i-passwordAgain{
+        margin-left: auto;
+        font-size: 10px;
+    }
+    .snipped{
+        padding: 5px 0px 5px 0px;
+        font-size: 13px;
+    }
+    .botton1{
+        font-size: 15px;
+        margin-bottom: 0px;
+        width: auto;
+    }
+    .botton2{
+        font-size: 10px;
+        width: auto;
+    }
+}
+@media(max-width : 530px) {
+    #i-username,#i-password{
+        width: 80%;
+        margin-left: auto;
+        font-size: 8px;
+    }
+    #i-name{
+        width: 80%;
+        margin-left: auto;
+        font-size: 8px;
+    }
+    #i-passwordAgain{
+        width: 80%;
+        margin-left: auto;
+        font-size: 8px;
+    }
+}

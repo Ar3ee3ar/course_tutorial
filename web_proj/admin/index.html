@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style/login.css">
+    <script src="https://kit.fontawesome.com/48f6528c57.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap" rel="stylesheet">
+    <script>
+        function seepass() {
+            let x = document.getElementById("i-password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+        function mouse_in1() {
+            let y = document.getElementById("home")
+            y.className = "change_color_red";
+        }
+        function mouse_out1() {
+            let y = document.getElementById("home")
+            y.className = "change_color_black";
+        }
+
+        function mouse_in2() {
+            let y = document.getElementById("home2")
+            y.className = "change_color_red";
+        }
+        function mouse_out2() {
+            let y = document.getElementById("home2")
+            y.className = "change_color_black";
+        }
+    </script>
+</head>
+
+<body>
+    <header class="login-header" id="header">
+        <div>
+            Admin
+        </div>
+    </header>
+
+    <section class="section">
+        <article>
+            <div class="bg-color-white">
+                <div class="block_container">
+                    <form action="logindata.php" method="POST">
+                        <div class="login">
+                            <label>เข้าสู่ระบบ</label><br>
+                        </div>
+                        <div class="snipped">
+                            <label id="l-username">Username</label>
+                            <input type="text" name="m_username" id="i-username"><br>
+                        </div>
+                        <div class="snipped">
+                            <label id="l-password">Password&nbsp</label>
+                            <input type="password" name="m_password" id="i-password"><br>
+                        </div>
+                        <div class="show-password">
+                            <input type="checkbox" onclick="seepass()" class="checkbox1"><label class="lb-con">Show
+                                Password</label>
+                        </div>
+                        <div>
+                            <input class="botton1" type="submit" value="เข้าสู่ระบบ"></label><br>
+                        </div>
+                        <div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <div class="div-footer">
+            <table>
+                <tr>
+                    <td class="td-1">
+                        <img src="img/ondemand-logo1.png" width="190px" height="50px">
+                    </td>
+                    <td>
+                        <label class="td-2">
+                            Contact Us<br>
+                        </label>
+                        <label class="td-2">
+                            089-999-9999
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </footer>
+</body>
+
+</html>
